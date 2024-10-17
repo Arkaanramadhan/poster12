@@ -1,0 +1,147 @@
+program poster;
+uses crt;
+label 1,2,3,4,5,6,7;
+var 
+A, nama, x, c, y, f : string;
+B : longint;
+kode : integer;
+begin 
+    clrscr;
+    7 :
+    writeln ('selamat datang di perpustakaan Universitas ILKOM ');
+
+    2 :
+    write ('apakah kamu merupakan mahasiswa universitas ILKOM : ');
+    readln (A);
+
+    if (A = 'iya') then
+            goto 1
+    else if (A= 'tidak') then
+            goto 3
+
+    else 
+    writeln ('eror');
+    goto 2;
+
+    3 : writeln ('Anda harus membuat kartu anggota perpustakaan ');
+
+        writeln ('anda harus membayar biaya non mahasiswa sebesar Rp150.000,00/bulan ');
+        writeln ('Apakah anda bersedia '); readln (x);
+
+        if (x = 'iya') then
+         goto 4
+        else if (x = 'tidak') then
+         goto 2;
+
+
+         4 :
+         write ('masukkan tanggal lahir anda (ddmmyyyy) ');
+         readln (B);
+         writeln ('masukkan ', B,' sebagai NIM anda');
+
+    1: write ('masukkan NIM anda : '); readln (B);
+
+    case (B) of 
+        23001..23600 : writeln ('anda terdaftar sebagai mahasiswa FT');
+        24001..24600 : writeln ('anda terdaftar sebagai mahasiswa FIB');
+        25001..25200 : writeln ('anda terdaftar sebagai mahasiswa F-MIPA');
+        26001..26300 : writeln ('anda terdaftar sebagai mahasiswa FPsi');
+        27001..27400 : writeln ('anda terdaftar sebagai mahasiswa FEB');
+        28001..28300 : writeln ('anda terdaftar sebagai mahasiswa FF');
+        29001..29400 : writeln ('anda terdaftar sebagai mahasiswa FP');
+        30001..30500 : writeln ('anda terdaftar sebagai mahasiswa FH');
+        31001..31600 : writeln ('anda terdaftar sebagai mahasiswa FK');
+        32001..32600 : writeln ('anda terdaftar sebagai mahasiswa FKG');
+        33001..33200 : writeln ('anda terdaftar sebagai mahasiswa FKM');
+        34001..34300 : writeln ('anda terdaftar sebagai mahasiswa FKep');
+        35001..35400 : writeln ('anda terdaftar sebagai mahasiswa FHut');
+        36001..36300 : writeln ('anda terdaftar sebagai mahasiswa Fisip');
+        37001..37400 : writeln ('anda terdaftar sebagai mahasiswa Fasilkom-Ti');
+        38001..38500 : writeln ('anda terdaftar sebagai mahasiswa FV');
+        01010000..32000000 : writeln ('anda terdaftar sebagai non mahasiswa');
+       
+       
+        
+    else
+    writeln ('anda tidak terdaftar sebagai mahasiswa');
+    goto 1;
+    end;
+
+    writeln ('');
+    writeln ('Daftar buku koleki perpustakaan Universitas');
+    writeln ('');
+    writeln ('   1. Fakultas Teknik ');
+    writeln ('   2. Fakultas Kedokteran');
+    writeln ('   3. Fakultas Farmasi');
+    writeln ('   4. Fakultas Ilmu Komputer dan Teknologi Informasi');
+    writeln ('   5. Fakultas Pertanian');
+    writeln ('   6. Fakultas Ekonomi dan Bisnis ');
+    writeln ('   7. Fakultas Kedokteran Gigi');
+    writeln ('   8. Fakultas Ilmu Budaya');
+    writeln ('   9. Fakultas Keperawatan');
+    writeln ('  10. Fakultas Kesehatan Masyarakat');
+    writeln ('  11. Fakultas Matematika dan Ilmu Pengetahuan Alam');
+    writeln ('  12. Fakultas Psikologi ');
+    writeln ('  13. Fakultas Kehutanan');
+    writeln ('  14. Fakultas Ilmu Sosial dan Ilmu politik');
+    writeln ('  15. Fakultas Hukum');
+    writeln ('  16. Fakultas Vokasi');
+
+    writeln ('');
+    writeln ('Buku apa yang sedang anda cari ?');
+    write ('Masukkan kode buku : ');readln (kode);
+
+        case (kode) of
+            1 : writeln ('Buku ada di lantai 1 Blok A');
+            2 : writeln ('Buku ada di lantai 1 Blok B');
+            3 : writeln ('Buku ada di lantai 1 Blok C');
+            4 : writeln ('Buku ada di lantai 2 Blok A');
+            5 : writeln ('Buku ada di lantai 2 Blok B');
+            6 : writeln ('Buku ada di lantai 2 Blok C');
+            7 : writeln ('Buku ada di lantai 3 Blok A');
+            8 : writeln ('Buku ada di lantai 3 Blok B');
+            9 : writeln ('Buku ada di lantai 3 Blok C');
+           10 : writeln ('Buku ada di lantai 4 Blok A');
+           11 : writeln ('Buku ada di lantai 4 Blok B');
+           12 : writeln ('Buku ada di lantai 4 Blok C');
+           13 : writeln ('Buku ada di lantai 5 Blok A');
+           14 : writeln ('Buku ada di lantai 5 Blok B');
+           15 : writeln ('Buku ada di lantai 5 Blok C');
+           16 : writeln ('Buku ada di lantai 5 Blok D');
+        
+        else
+        writeln ('eror');
+        end;
+
+        writeln ('');
+        writeln ('menu :');
+        writeln ('1. Pinjam buku (max 2 buku)');
+        writeln ('2. Kembalikan buku ');
+
+        write ('masukkan menu : ');
+        readln (y);
+
+        if (y = '1') then
+            begin
+            write ('masukkan nama buku : ');
+            readln (c);
+            writeln ('');
+            writeln ('Buku ',c,' berhasil dipinjam')
+            end
+        else if (y = '2') then
+            begin
+            write ('masukkan nama buku : ');
+            readln (f);
+            writeln ('');
+            writeln ('Buku',f,' berhasil dikembalikan');
+            end
+        else
+            begin
+            writeln ('eror');
+            end;
+
+        Writeln ('Terima kasih Selamat Belajar dengan Tenang ');
+        writeln ('');
+        goto 7
+    
+end.
